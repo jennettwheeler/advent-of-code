@@ -16,28 +16,28 @@ namespace aoc2021
     long long Problem1::Calculate()
     {
         int count = 0;
-        // std::deque<int> window;
-        // int prevSum = 0;
-        // for (int value : nums)
-        // {
-        //     window.push_back(value);
+        std::deque<int> window;
+        int prevSum = 0;
+        for (int value : nums)
+        {
+            window.push_back(value);
 
-        //     if (window.size() > windowSize)
-        //     {
-        //         window.pop_front();
+            if (window.size() > windowSize)
+            {
+                window.pop_front();
 
-        //         int new_sum = SumWindow(window);
-        //         if (new_sum > prevSum)
-        //         {
-        //             count++;
-        //         }
-        //         prevSum = new_sum;
-        //     }
-        //     else
-        //     {
-        //         prevSum = SumWindow(window);
-        //     }
-        // }
+                int new_sum = SumWindow(window);
+                if (new_sum > prevSum)
+                {
+                    count++;
+                }
+                prevSum = new_sum;
+            }
+            else
+            {
+                prevSum = SumWindow(window);
+            }
+        }
         return count;
     };
 
