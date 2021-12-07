@@ -1,6 +1,6 @@
 #include <Problem6.h>
 
-#include <iostream>
+#include <algorithm>
 
 namespace aoc2021
 {

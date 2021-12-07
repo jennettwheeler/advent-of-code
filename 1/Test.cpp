@@ -1,4 +1,4 @@
-#include <Problem6.h>
+#include <Problem1.h>
 #include <ProblemRunner.h>
 
 #include <iostream>
@@ -6,7 +6,7 @@
 #include <string>
 namespace fs = std::filesystem;
 
-std::string problemNum = "6";
+std::string problemNum = "1";
 
 int main(int argc, char *argv[]){
     if (argc < 2) {
@@ -19,16 +19,16 @@ int main(int argc, char *argv[]){
     const fs::path input_file("input.txt");
     const fs::path input_path = root_dir/input_file;
 
-    aoc2021::ProblemRunner::RegisterProblem<aoc2021::Problem6>(problemNum);
+    aoc2021::ProblemRunner::RegisterProblem<aoc2021::Problem1>(problemNum);
     if (aoc2021::ProblemRunner::Run(problemNum, example_path.u8string()))
     {
-        if (aoc2021::ProblemRunner::GetResult(1) != 5934) return EXIT_FAILURE;
-        if (aoc2021::ProblemRunner::GetResult(2) != 26984457539) return EXIT_FAILURE;
+        if (aoc2021::ProblemRunner::GetResult(1) != 0) return EXIT_FAILURE;
+        if (aoc2021::ProblemRunner::GetResult(2) != 0) return EXIT_FAILURE;
 
         if (aoc2021::ProblemRunner::Run(problemNum, input_path.u8string()))
         {
-            if (aoc2021::ProblemRunner::GetResult(1) != 379414) return EXIT_FAILURE;
-            if (aoc2021::ProblemRunner::GetResult(2) != 1705008653296) return EXIT_FAILURE;
+            if (aoc2021::ProblemRunner::GetResult(1) != 0) return EXIT_FAILURE;
+            if (aoc2021::ProblemRunner::GetResult(2) != 0) return EXIT_FAILURE;
             return EXIT_SUCCESS;
         }
     }

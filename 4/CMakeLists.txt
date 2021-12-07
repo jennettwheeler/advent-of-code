@@ -1,8 +1,19 @@
-add_library(aoc_2021_4 STATIC)
-target_sources(aoc_2021_4
+set(PROBLEM_NUM 4)
+set(PROBLEM_NAME ${PROJECT_NAME}_${PROBLEM_NUM})
+
+add_library(${PROBLEM_NAME} STATIC)
+target_sources(${PROBLEM_NAME}
     PUBLIC
-        Problem4.h
+        Problem${PROBLEM_NUM}.h
     PRIVATE
-        Problem4.cpp)
-target_link_libraries(aoc_2021_4 PRIVATE aoc_2021_interface)
-target_include_directories(aoc_2021_4 PUBLIC .)
+        Problem${PROBLEM_NUM}.cpp)
+
+target_link_libraries(${PROBLEM_NAME}
+  PRIVATE
+    ${PROJECT_NAME}_interface
+    ${PROJECT_NAME}_utility)
+target_include_directories(${PROBLEM_NAME} PUBLIC .)
+
+add_executable(${PROBLEM_NAME}_test Test.cpp)
+target_link_libraries(${PROBLEM_NAME}_test PRIVATE ${PROBLEM_NAME} ${PROJECT_NAME}_interface ${PROJECT_NAME}_runner)
+add_test(${PROBLEM_NAME}_test ${PROBLEM_NAME}_test ${CMAKE_SOURCE_DIR}/${PROBLEM_NUM})

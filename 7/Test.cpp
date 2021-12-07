@@ -6,6 +6,8 @@
 #include <string>
 namespace fs = std::filesystem;
 
+std::string problemNum = "7";
+
 int main(int argc, char *argv[]){
     if (argc < 2) {
         std::cerr << "Must supply the root dir of input files" << std::endl;
@@ -17,13 +19,13 @@ int main(int argc, char *argv[]){
     const fs::path input_file("input.txt");
     const fs::path input_path = root_dir/input_file;
 
-    aoc2021::ProblemRunner::RegisterProblem<aoc2021::Problem7>("7");
-    if (aoc2021::ProblemRunner::Run("7", example_path.u8string()))
+    aoc2021::ProblemRunner::RegisterProblem<aoc2021::Problem7>(problemNum);
+    if (aoc2021::ProblemRunner::Run(problemNum, example_path.u8string()))
     {
         if (aoc2021::ProblemRunner::GetResult(1) != 37) return EXIT_FAILURE;
         if (aoc2021::ProblemRunner::GetResult(2) != 168) return EXIT_FAILURE;
 
-        if (aoc2021::ProblemRunner::Run("7", input_path.u8string()))
+        if (aoc2021::ProblemRunner::Run(problemNum, input_path.u8string()))
         {
             if (aoc2021::ProblemRunner::GetResult(1) != 355521) return EXIT_FAILURE;
             if (aoc2021::ProblemRunner::GetResult(2) != 100148777) return EXIT_FAILURE;
