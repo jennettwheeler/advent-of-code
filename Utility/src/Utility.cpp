@@ -2,6 +2,29 @@
 
 namespace aoc2021
 {
+  std::vector<std::string> SplitString(const std::string& s, const char delim)
+  {
+      std::vector<std::string> output;
+      std::string temp = "";
+      for(int i=0;i<s.length();++i)
+      {
+          if(s[i]==delim)
+          {
+              if (temp.size() > 0)
+              {
+                  output.push_back(temp);
+                  temp = "";
+              }
+          }
+          else
+          {
+              temp.push_back(s[i]);
+          }
+      }
+      output.push_back(temp);
+      return output;
+  }
+
   std::vector<int> SplitStringToInt(const std::string& s, const char delim)
   {
       std::vector<int> output;
