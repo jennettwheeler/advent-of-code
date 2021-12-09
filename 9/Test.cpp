@@ -22,13 +22,13 @@ int main(int argc, char *argv[]){
     aoc2021::ProblemRunner::RegisterProblem<aoc2021::Problem9>(problemNum);
     if (aoc2021::ProblemRunner::Run(problemNum, example_path.u8string()))
     {
-        if (aoc2021::ProblemRunner::GetResult(1) != 0) return EXIT_FAILURE;
-        if (aoc2021::ProblemRunner::GetResult(2) != 0) return EXIT_FAILURE;
+        if (aoc2021::ProblemRunner::GetResult(1) != 15) return EXIT_FAILURE;
+        if (aoc2021::ProblemRunner::GetResult(2) != 1134) return EXIT_FAILURE;
 
         if (aoc2021::ProblemRunner::Run(problemNum, input_path.u8string()))
         {
-            if (aoc2021::ProblemRunner::GetResult(1) != 0) return EXIT_FAILURE;
-            if (aoc2021::ProblemRunner::GetResult(2) != 0) return EXIT_FAILURE;
+            if (aoc2021::ProblemRunner::GetResult(1) != 504) return EXIT_FAILURE;
+            if (aoc2021::ProblemRunner::GetResult(2) != 1558722) return EXIT_FAILURE;
             return EXIT_SUCCESS;
         }
     }
